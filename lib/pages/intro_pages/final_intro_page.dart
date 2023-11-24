@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/CustomButton.dart';
+import 'package:flutter_application_1/pages/Get_started.dart';
+import 'package:flutter_application_1/pages/Sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class final_intro_page extends StatelessWidget {
@@ -46,9 +48,34 @@ class final_intro_page extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomButton(title: 'Get Started', color: Colors.blue,textColor: Colors.white, onPressed: (){}),
-                SizedBox(height: 15.0,),
-                CustomButton(title: 'Sign Up', color: Color.fromARGB(255, 168, 205, 235),textColor: Colors.blueAccent, onPressed: (){})
+                CustomButton(
+                  title: 'Get Started',
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    // Navigate to the Get Started page when the button is pressed
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Getstarted_page()),
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                CustomButton(
+                  title: 'Sign Up',
+                  color: Color.fromARGB(255, 168, 205, 235),
+                  textColor: Colors.blueAccent,
+                  onPressed: () {
+                    // Navigate to the Get Started page when the button is pressed
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUp_page()),
+                    );
+                  },
+                )
               ],
             ),
           ],

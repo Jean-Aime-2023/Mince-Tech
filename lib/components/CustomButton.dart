@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors_in_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -8,11 +9,18 @@ class CustomButton extends StatelessWidget {
   final Color textColor;
   final VoidCallback onPressed;
 
-  CustomButton({Key? key, required this.title, required this.color,required this.textColor, required this.onPressed})
-      : super(key: key);
+  CustomButton({
+    Key? key,
+    required this.title,
+    required this.color,
+    required this.textColor,
+    required this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final buttonStyles = TextStyle(fontSize: 18,fontWeight:  FontWeight.w600, color: textColor); // Move inside the build method
+
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -24,11 +32,11 @@ class CustomButton extends StatelessWidget {
           backgroundColor: color,
         ),
         child: Container(
-          height: 60,
+          height: 50,
           child: Center(
             child: Text(
               title,
-              style: TextStyle(fontSize: 18,color:textColor, fontFamily: 'montserrat'),
+              style: GoogleFonts.montserrat(textStyle: buttonStyles),
             ),
           ),
         ),
