@@ -70,6 +70,7 @@ class SignUp_page extends StatelessWidget {
                     height: 10.0,
                   ),
                   TextField(
+                    
                     decoration: InputDecoration(
                       hintText: 'Password', // Placeholder text
                       hintStyle: GoogleFonts.montserrat(
